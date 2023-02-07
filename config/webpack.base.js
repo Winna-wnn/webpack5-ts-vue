@@ -36,6 +36,22 @@ module.exports = {
         ],
       },
       {
+        test: /\.less$/,
+        use: [
+          devMode ? "style-loader" : MiniCssExtractPlugin.loader,
+          "css-loader",
+          "postcss-loader",
+          {
+            loader: "less-loader",
+            options: {
+              lessOptions: {
+                javascriptEnabled: true,
+              },
+            },
+          },
+        ],
+      },
+      {
         test: /\.(png|svg|jpe?g|gif)$/,
         type: "asset",
         generator: {

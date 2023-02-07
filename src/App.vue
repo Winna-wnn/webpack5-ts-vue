@@ -14,6 +14,15 @@
   <div class="background">
     <h1>{{ name }}</h1>
   </div>
+  <a-button type="primary">按钮</a-button>
+  <a-input placeholder="请输入。。。" />
+  <a-layout>
+    <a-layout-header class="layout-header">头部</a-layout-header>
+    <a-layout style="height: 100vh">
+      <a-layout-sider></a-layout-sider>
+      <a-layout-content>内容</a-layout-content>
+    </a-layout>
+  </a-layout>
 </template>
 <script lang="ts">
 import { defineComponent } from "vue";
@@ -26,7 +35,7 @@ export default defineComponent({
   },
 });
 </script>
-<style lang="scss" scoped>
+<style lang="less" scoped>
 .background {
   background-image: url("./assets/images/test.jpg");
   background-size: contain;
@@ -39,5 +48,8 @@ export default defineComponent({
 }
 .iconfont {
   font-size: 40px;
+}
+.layou-header {
+  color: @primary-color;
 }
 </style>
